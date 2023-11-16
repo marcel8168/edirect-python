@@ -14,19 +14,22 @@ else:
     print("xtract not found in the PATH.")
 
 # for more information regarding the query see the guide: https://dataguide.nlm.nih.gov/edirect/xtract.html
-# or watch the webinar on YouTube: https://www.youtube.com/playlist?list=PL7dF9e2qSW0a6zx-yGMJvY6mcwQz_Vx4b
+# or watch the webinar videos on YouTube: https://www.youtube.com/playlist?list=PL7dF9e2qSW0a6zx-yGMJvY6mcwQz_Vx4b
 
-query = 'efetch -db pubmed -id 7254297 -format xml | \
-        xtract -set Set -rec Rec -pattern PubmedArticle \
-        -if MedlineTA -equals "N Engl J Med" \
-        -or NlmUniqueID -equals 0255562 \
-        -or ISSNLinking -equals 0028-4793 \
-        -or ISSNLinking -equals 1533-4406 \
-        -tab "\n" -sep "," \
-        -pkg Common \
-        -wrp PMID -element MedlineCitation/PMID \
-        -wrp Title -element Article/ArticleTitle \
-        -wrp Abstract -element Abstract/AbstractText \
-        -pkg MeshTermList -wrp MeshTerm -element MeshHeading/DescriptorName'
+query = 'esearch -db pubmed -query ""1533-4406"[JOUR] AND "N Engl J Med"[JOUR]" | \
+    efetch -format xml | \
+    xtract -set Set -rec Rec -pattern PubmedArticle \
+    -if MedlineTA -equals "N Engl J Med" \
+    -or NlmUniqueID -equals 0255562 \
+    -or ISSNLinking -equals 0028-4793 \
+    -or ISSNLinking -equals 1533-4406 \
+    -tab "\n" -sep "," \
+    -wrp PMID -element MedlineCitation/PMID'
 
-print(edirect.pipeline(query))
+print("Query is being processed..")
+results = edirect.pipeline(query)
+
+if results:
+    print(results)
+else:
+    print("No results available.")
