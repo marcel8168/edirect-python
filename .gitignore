@@ -160,4 +160,4 @@ cython_debug/
 #.idea/
 
 # constants to protect api key
-constants.py
+api_key.txt
