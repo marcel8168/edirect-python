@@ -12,6 +12,7 @@ This repository contains code for querying the PubMed database via NCBI's Entrez
 * [Common usage](#common-usage)
 * [Installation](#installation)
 * [Further Information](#further-information)
+* [License](#licence)
 
 ## Common usage
 xyz
@@ -42,15 +43,6 @@ docker compose up
 |PyMed|https://github.com/gijswobben/pymed|
 |EntrezPy|https://gitlab.com/ncbipy/entrezpy|
 
-### Third-Party Libraries
-##### medicaleponyms
-- **Description**: Classification of medical eponyms
-- **License**: [MIT License](https://github.com/dtoddenroth/medicaleponyms/blob/main/LICENSE)
+## License
 
-##### metapub
-- **Description**: Toolset for PubMed metadata and articles
-- **License**: [Apache License](https://github.com/metapub/metapub/blob/master/LICENSE)
-
-##### metapub
-- **Description**: Toolset for PubMed metadata and articles
-- **License**: [Apache License](https://github.com/metapub/metapub/blob/master/LICENSE)
+[MIT License](LICENSE) - 2023
