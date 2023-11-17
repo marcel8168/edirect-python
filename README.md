@@ -1,14 +1,29 @@
-# EDirect Python Implementation
-Python implementation of the NCBI's Entrez Direct (EDirect) API to query the PubMed Database
+<h1 align="center">
+  <br>
+   <p>EDirect Python Implementation</p>
+  <br>
+</h1>
+<p align="center">
+This repository contains code for querying the PubMed database via NCBI's Entrez Direct (EDirect) using Python. There are also examples of other library functions that can be used for similar queries (albeit with limitations).
+</p>
 
-### Setting up
+## Table of contents
+
+* [Common usage](#common-usage)
+* [Installation](#installation)
+* [Further Information](#further-information)
+
+## Common usage
+xyz
+
+## Installation
 ```shell
 git clone https://github.com/marcel8168/edirect-python .
 cd edirect-python
 docker compose up
 ```
 
-### More Information
+## Further Information
 ##### EDirect and E-Utilities
 |Topic|Link|
 |:-----|:--------|
@@ -26,3 +41,16 @@ docker compose up
 |MetaPub|https://github.com/metapub/metapub|
 |PyMed|https://github.com/gijswobben/pymed|
 |EntrezPy|https://gitlab.com/ncbipy/entrezpy|
+
+### Third-Party Libraries
+##### medicaleponyms
+- **Description**: Classification of medical eponyms
+- **License**: [MIT License](https://github.com/dtoddenroth/medicaleponyms/blob/main/LICENSE)
+
+##### metapub
+- **Description**: Toolset for PubMed metadata and articles
+- **License**: [Apache License](https://github.com/metapub/metapub/blob/master/LICENSE)
+
+##### metapub
+- **Description**: Toolset for PubMed metadata and articles
+- **License**: [Apache License](https://github.com/metapub/metapub/blob/master/LICENSE)
