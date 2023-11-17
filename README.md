@@ -45,4 +45,4 @@ docker compose up
 
 ## License
 
-[MIT License](LICENSE) - 2023
+[MIT License](LICENSE) (Marcel Hiltner, 2023)
