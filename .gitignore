@@ -161,3 +161,6 @@ cython_debug/
 
 # constants to protect api key
 api_key.txt
+
+# query results
+result.xml
