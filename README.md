@@ -12,6 +12,7 @@ docker compose up
 ##### EDirect and E-Utilities
 |Topic|Link|
 |:-----|:--------|
+|PubMed API|https://www.ncbi.nlm.nih.gov/pmc/tools/developers/|
 |Entrez Direct|https://www.ncbi.nlm.nih.gov/books/NBK179288/|
 |EDirect Installation|https://dataguide.nlm.nih.gov/edirect/install.html|
 |ESearch|https://dataguide.nlm.nih.gov/edirect/esearch.html|
