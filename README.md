@@ -4,7 +4,7 @@
   <br>
 </h1>
 <p align="center">
-This repository contains code for querying the PubMed database via NCBI's Entrez Direct (EDirect) using Python. There are also examples of other library functions that can be used for similar queries (albeit with limitations).
+This repository contains code for querying the PubMed database via NCBI's Entrez Direct (EDirect) using Python. There are also examples of other library functions that can be used for similar queries (but with possible limitations).
 </p>
 
 ## Table of contents
