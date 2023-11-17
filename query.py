@@ -35,7 +35,7 @@ print("Query is being processed..")
 res = edirect.pipeline(query)
 
 if res:
-    file = 'result1.xml'
+    file = 'result.xml'
     res_xml = fromstring(res)
     ElementTree(res_xml).write(file)
     print(f"Query output written into {file}")
