@@ -163,4 +163,4 @@ cython_debug/
 api_key.txt
 
 # query results
-result.xml
+results/
