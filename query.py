@@ -15,7 +15,8 @@ from xml.etree.ElementTree import fromstring, ElementTree
 # note that special characters in the query term lead to syntax errors
 JOURNAL = "Animals"
 JOURNAL_ISSN = "2076-2615"
-OUTPUT_FILE = 'animals_data.xml'
+TARGET_DIRECTORY = "results/"
+OUTPUT_FILE = "animals_data.xml"
 
 
 xtract_path = shutil.which('xtract')
@@ -25,14 +26,16 @@ if xtract_path is not None:
 else:
     print("xtract not found in the PATH.")
 
+if not os.path.exists(TARGET_DIRECTORY):
+    os.makedirs(TARGET_DIRECTORY)
+
 # for more information regarding the query see the guide: https://dataguide.nlm.nih.gov/edirect/xtract.html
 # or watch the webinar videos on YouTube: https://www.youtube.com/playlist?list=PL7dF9e2qSW0a6zx-yGMJvY6mcwQz_Vx4b
 query = f'esearch -db pubmed -query ""{JOURNAL_ISSN}"[JOUR] AND "{JOURNAL}"[JOUR]" | \
     efetch -format xml | \
     xtract -set Set \
         -rec Rec -pattern PubmedArticle \
-        -if MedlineTA -equals "N Engl J Med" \
-        -and AbstractText \
+        -if AbstractText \
         -tab "\n" -sep "," \
         -block PubmedArticle -pkg Common \
             -wrp PMID -element MedlineCitation/PMID \
@@ -48,8 +51,8 @@ if not res:
     print("No results available.")
 else:
     res_xml = fromstring(res)
-    ElementTree(res_xml).write(OUTPUT_FILE)
-    print(f"Query output written into {OUTPUT_FILE}")
+    ElementTree(res_xml).write(TARGET_DIRECTORY + OUTPUT_FILE)
+    print(f"Query output written into {TARGET_DIRECTORY + OUTPUT_FILE}")
 
     # Extract data from XML and create a DataFrame
     data = []
