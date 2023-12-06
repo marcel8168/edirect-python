@@ -15,13 +15,41 @@ This repository contains code for querying the PubMed database via NCBI's Entrez
 * [License](#licence)
 
 ## Common usage
-xyz
+Commonly this is used for querying publications from PubMed. This was implemented for my [master's thesis](https://github.com/marcel8168/medtextclassifier) in order to create a custom dataset for fine-tuning NLP models.
 
 ## Installation
 ```shell
 git clone https://github.com/marcel8168/edirect-python .
 cd edirect-python
 docker compose up
+```
+
+## Example Usage
+```python
+# Extract data from XML and create a DataFrame
+xml_file = "nejm_data.xml"
+data_path = "../edirect-python/results/"
+
+data = []
+
+tree = ElementTree()
+xml = tree.parse(data_path + xml_file)
+
+for rec in xml.findall('.//Rec'):
+    try: 
+        common = rec.find('.//Common')
+        pmid = common.find('PMID').text
+        title = common.find('Title').text
+        abstract = common.find('Abstract').text
+        mesh_term_list = rec.find('.//MeshTermList')
+        mesh_terms = [term.text for term in mesh_term_list.findall('MeshTerm')]
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        print(f"Error occured for PMID: {pmid}")
+
+    data.append({'pmid': pmid, 'title': title,
+                'abstract': abstract, 'meshtermlist': mesh_terms, 'label': 0})
+df = pd.DataFrame(data)
 ```
 
 ## Further Information
