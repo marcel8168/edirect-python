@@ -39,6 +39,7 @@ query = f'esearch -db pubmed -query ""{JOURNAL_ISSN}"[JOUR] AND "{JOURNAL}"[JOUR
         -tab "\n" -sep "," \
         -block PubmedArticle -pkg Common \
             -wrp PMID -element MedlineCitation/PMID \
+            -wrp Type -element PublicationType \
             -wrp Title -element Article/ArticleTitle \
             -wrp Abstract -element AbstractText \
         -block MeshHeadingList -pkg MeshTermList \
