@@ -22,6 +22,7 @@ Commonly this is used for querying publications from PubMed. This was implemente
 ```shell
 git clone https://github.com/marcel8168/edirect-python .
 ```
+2. Copy your API key from PubMed (see [How to get API key](https://support.nlm.nih.gov/knowledgebase/article/KA-05317/en-us)) into api_key.txt
 2. Customize the query for your use case in the file query.py. 
 The current query returns all articles of journal "N Engl J Med" (New England Journal of Medicine) that include an abstract.
 3. Build and run the docker container that automatically executes the query.py script:
