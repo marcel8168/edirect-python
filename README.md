@@ -20,7 +20,7 @@ Commonly this is used for querying publications from PubMed. This was implemente
 ## Installation and Execution
 1. Clone the repository:
 ```shell
-git clone https://github.com/marcel8168/edirect-python .
+git clone https://github.com/marcel8168/edirect-python edirect-python
 ```
 2. Copy your API key from PubMed (see [How to get API key](https://support.nlm.nih.gov/knowledgebase/article/KA-05317/en-us)) into api_key.txt
 3. Customize the query for your use case in the file query.py. 
