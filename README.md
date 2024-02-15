@@ -23,15 +23,15 @@ Commonly this is used for querying publications from PubMed. This was implemente
 git clone https://github.com/marcel8168/edirect-python .
 ```
 2. Copy your API key from PubMed (see [How to get API key](https://support.nlm.nih.gov/knowledgebase/article/KA-05317/en-us)) into api_key.txt
-2. Customize the query for your use case in the file query.py. 
+3. Customize the query for your use case in the file query.py. 
 The current query returns all articles of journal "N Engl J Med" (New England Journal of Medicine) that include an abstract.
-3. Build and run the docker container that automatically executes the query.py script:
+4. Build and run the docker container that automatically executes the query.py script:
 ```shell
 cd edirect-python
 # Docker runs all installations and executes the query.py script
 docker compose up
 ```
-4. The saved xml can then be converted into a DataFrame:
+5. The saved xml can then be converted into a DataFrame:
 ```python
 # Extract data from XML and create a DataFrame
 xml_file = "nejm_data.xml"
