@@ -18,19 +18,19 @@ This repository contains code for querying the PubMed database via NCBI's Entrez
 Commonly this is used for querying publications from PubMed. This was implemented for my [master's thesis](https://github.com/marcel8168/medtextclassifier) in order to create a custom dataset for fine-tuning NLP models.
 
 ## Installation and Execution
-1. Clone the repository.
+1. Clone the repository:
 ```shell
 git clone https://github.com/marcel8168/edirect-python .
 ```
 2. Customize the query for your use case in the file query.py. 
 The current query returns all articles of journal "N Engl J Med" (New England Journal of Medicine) that include an abstract.
-3. Execute build and run the docker container that automatically executes the query.py script:
+3. Build and run the docker container that automatically executes the query.py script:
 ```shell
 cd edirect-python
 # Docker runs all installations and executes the query.py script
 docker compose up
 ```
-4. The saved xml can then be converted into a DataFrame.
+4. The saved xml can then be converted into a DataFrame:
 ```python
 # Extract data from XML and create a DataFrame
 xml_file = "nejm_data.xml"
