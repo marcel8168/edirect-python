@@ -23,7 +23,7 @@ Commonly this is used for querying publications from PubMed. This was implemente
 git clone https://github.com/marcel8168/edirect-python .
 ```
 2. Customize the query for your use case in the file query.py. 
-The current query returns all articles of journal "N Engl J Med" (New England Journal of Medicine) that include an abstract.//
+The current query returns all articles of journal "N Engl J Med" (New England Journal of Medicine) that include an abstract.
 3. Execute build and run the docker container that automatically executes the query.py script:
 ```shell
 cd edirect-python
